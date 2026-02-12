@@ -12,7 +12,7 @@ Typst Template
 - Figure index
 - Bibliography
 
-
+## Usage
 ```typ
 #import "hnotes.typ": conf, fimage
 #show: doc => conf(
@@ -22,8 +22,9 @@ Typst Template
 )
 ```
 
+### Options
 ```typ
-#let conf(
+#conf(
   author: "", // Author name
   mail: "", // Author mail
   lang: "es", // document language
