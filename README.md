@@ -11,3 +11,25 @@ Typst Template
 - Content index
 - Figure index
 - Bibliography
+
+
+```typ
+#import "hnotes.typ": conf, fimage
+#show: doc => conf(
+  author: "Hugo Coto Flórez",
+  mail: "me@hugocoto.com",
+  doc,
+)
+```
+
+```typ
+#let conf(
+  author: "", // Author name
+  mail: "", // Author mail
+  lang: "es", // document language
+  index: true, // add (or not) content index 
+  figure-index: true, // add (or not) figure index
+  bib: "", // bibliography file (or none)
+  doc,
+)
+```
