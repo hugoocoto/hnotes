@@ -10,7 +10,15 @@
  */
 
 // template config
-#let conf(author: "", mail: "", lang: "es", doc) = {
+#let conf(
+  author: "",
+  mail: "",
+  lang: "es",
+  index: true,
+  figure-index: true,
+  bib: "",
+  doc,
+) = {
   set text(lang: lang)
 
   // level 1 header is centered and uses smallcaps
@@ -20,7 +28,7 @@
     #set align(center)
     #set text(weight: "regular", size: 1.2em)
     #smallcaps(it.body)
-    #v(1em)
+    #v(2em)
   ]
 
   // each level 2 header in a different page
@@ -56,14 +64,14 @@
 
   // rest of the document
   [#doc]
-  pagebreak()
-  outline()
-  outline(
+  if index or figure-index [#pagebreak()]
+  if index [#outline()]
+  if figure-index [#outline(
     title: [Lista de figuras],
     target: figure,
-  )
+  )]
 
-  bibliography("bib.yaml")
+  if bib.len() > 0 [#bibliography(bib)]
 }
 
 // image inside a figure

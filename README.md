@@ -11,6 +11,3 @@ Typst Template
 - Content index
 - Figure index
 - Bibliography
-
-## Todo
-It's not finished, It works for me but I have to add more flexibility
